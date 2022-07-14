@@ -25,9 +25,13 @@ class User{
         console.log(book)
     }
 
-    getBookNames(books){
-        console.log(`Los libros del usuario son: ${this.books.map(book=>book.tituloLibro)}`);
+    getBookNames(book){
+
+        let bookNames=book.tituloLibro
+        console.log(bookNames)
     }
+
+    
 
 
 }
@@ -47,23 +51,23 @@ form.addEventListener("submit",(e)=>{
         }
     })
 
-
-    let books=new Array();
+   
 
     let book={
         tituloLibro:document.getElementById('book').value,
         autorLibro:document.getElementById('autor').value
     }
-    
+
+
         
     
     
-    const usuario=new User(name,surname,pets,books)
+    const usuario=new User(name,surname,pets,book)
     usuario.getFullName(name,surname)
     usuario.addMascota(pets)
     usuario.countMascotas(pets)
     usuario.addBook(book)
-    usuario.getBookNames(books)
+    usuario.getBookNames(book)
     form.reset()
 })
 
