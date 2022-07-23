@@ -16,9 +16,25 @@ server.on('error',(err)=>{ console.log(err) })
 app.get('/productos', (req,res)=>{
 
     const productosDisponibles=producto.getAll()
-    res.send(productosDisponibles)
+    res.send(`${productosDisponibles}` )
 })
 
+
+
+
+
+app.get('/productoRandom', (req,res)=>{
+
+    const numero=(min,max)=>{
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    console.log(numero)
+    
+    const productoElegido=producto.getProduct(numero)
+    res.send(`${productoElegido}`)
+    console.log(productoElegido)
+})
 
 
 
