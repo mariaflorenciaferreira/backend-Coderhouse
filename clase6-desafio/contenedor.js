@@ -11,7 +11,7 @@ class Contenedor{
             let dataParse= JSON.parse(data)
     
             if(dataParse.length){
-                console.log(dataParse)
+                return dataParse
             }else{
                 console.log(`no hay productos`)
             }
@@ -29,8 +29,7 @@ class Contenedor{
             let productoId=dataParse.find(productoId=>productoId.id===id)
             
             if(productoId){
-                console.log({productoId})
-                
+                return productoId
                 
             }else{
                 console.log("No se encontro el producto")
